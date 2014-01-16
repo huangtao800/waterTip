@@ -4,5 +4,7 @@
     <string name="app_name">Water Tip</string>
     <string name="action_settings">Settings</string>
     <string name="logoImgDesc">This is logo image</string>
+    <string name="default_count">0</string>
+    <string name="tip">Here are some tips. Here are some tips.</string>
 
 </resources>

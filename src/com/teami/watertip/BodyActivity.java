@@ -18,12 +18,13 @@ public class BodyActivity extends Activity {
 				"fonts/centurygothic.ttf");
 		titleView.setTypeface(typeface);
 		
+		
 		//…Ë÷√»’∆⁄
 		Calendar instance = Calendar.getInstance();
 		TextView dateView = (TextView) findViewById(R.id.date_textview);
 		dateView.setText(instance.get(Calendar.YEAR)
 				+ "-"
-				+ (instance.get((Calendar.MONTH) + 1) + "-" + instance
+				+ ((instance.get(Calendar.MONTH)+1) + "-" + instance
 						.get(Calendar.DAY_OF_MONTH)));
 		dateView.setTypeface(typeface);
 	}
