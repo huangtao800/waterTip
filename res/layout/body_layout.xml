@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" >
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -41,9 +42,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/relative_layout02"
-        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -57,25 +58,70 @@
                 android:src="@drawable/person" >
             </ImageView>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/default_count"
-                android:textColor="@color/font_color"
-                android:textSize="@dimen/count_size"
-                android:singleLine="true" />
-        </LinearLayout>
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:orientation="vertical" >
 
+                <TextView
+                    android:id="@+id/count_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:singleLine="true"
+                    android:text="@string/default_count"
+                    android:textColor="@color/font_color"
+                    android:textSize="@dimen/count_size"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:id="@+id/left_number_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:singleLine="true"
+                    android:textSize="@dimen/number_left_size"
+                    android:text="33" />
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
     <TextView
         android:id="@+id/tip_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/relative_layout03"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/font_color"
         android:text="@string/tip"
-        android:layout_below="@id/relative_layout03" />
-    
+        android:textColor="@color/font_color" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tip_textview" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/setting_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/setting" />
+
+            <ImageButton
+                android:id="@+id/help_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/help" />
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 </RelativeLayout>
