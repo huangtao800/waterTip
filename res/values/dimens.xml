@@ -8,5 +8,6 @@
     <dimen name="count_size">76dp</dimen>
     <dimen name="tip_size">16dp</dimen>
     <dimen name="number_left_size">20dp</dimen>
-
+    <dimen name="title_size">40dp</dimen>
+    <dimen name="water_annotation">12dp</dimen>
 </resources>

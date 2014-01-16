@@ -6,5 +6,8 @@
     <string name="logoImgDesc">This is logo image</string>
     <string name="default_count">100</string>
     <string name="tip">Here are some tips. Here are some tips.</string>
-
+    <string name="settings_title">Settings</string>
+    <string name="water_setting_title"> 每日喝水 </string>    
+    <string name="count_of_water"> 1 </string>    
+    
 </resources>

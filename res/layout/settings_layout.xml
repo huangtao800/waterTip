@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/white"
+    >
+   
+    <!-- Settings -->	   
+    <TextView
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="@string/settings_title"
+   	    android:textColor="@color/font_color"
+   	    android:textSize="@dimen/title_size"
+   	    android:layout_gravity="center" 
+   	    android:layout_marginTop="10dp"
+   	    />
+   	    
+    <!-- 每日喝水多少杯 -->
+    
+    <RelativeLayout
+        android:id="@+id/set_water_count_section"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/section_backgroud_color" >
+
+        <TextView
+            android:id="@+id/water_setting_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/font_color"
+            android:text="每日喝水"
+            android:gravity="center"
+            android:ems="5"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/app_title_size" />
+
+        <EditText
+            android:id="@+id/water_input_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/water_setting_title"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="30dp"
+			android:background="@color/section_backgroud_color"
+           	android:ems="1"
+           	android:cursorVisible="false"
+            android:inputType="number"
+            android:text="@string/count_of_water"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/count_size" >
+
+        </EditText>
+        
+        
+        <TextView
+            android:id="@+id/water_annotation_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/water_input_editText"
+            android:layout_marginRight="15dp"
+			android:paddingBottom="15px"
+            android:gravity="right"
+            android:text=" *一般的杯子大约都是200ml"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/water_annotation" />
+
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="杯"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/title_size"
+            android:layout_marginBottom="16dp"
+            android:layout_alignRight="@id/water_input_editText"
+            android:layout_above="@id/water_annotation_text"
+            />
+        
+    </RelativeLayout>
+
+        <!-- 每日喝水多少杯 -->
+    
+   <RelativeLayout
+        android:id="@+id/set_reminding_section"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/section_backgroud_color" >
+
+        <TextView
+            android:id="@+id/set_reminding_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/font_color"
+            android:text="提醒设定"
+            android:ems="5"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/app_title_size" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="66dp"
+            android:layout_toRightOf="@+id/set_reminding_title"/>
+
+    </RelativeLayout>
+    
+</LinearLayout>
