@@ -33,22 +33,22 @@ public class SettingActivity extends BaseActivity {
 		setContentView(R.layout.settings_layout);	
 		setAll(false);
 		
-		//天数输入框！！！
-		final EditText waterInputText = (EditText)findViewById(R.id.water_input_editText);
-		waterInputText.setOnFocusChangeListener(new OnFocusChangeListener() {			
-			@SuppressLint("ResourceAsColor")
-			@Override
-			public void onFocusChange(View view, boolean hasFocus) {
-				if(hasFocus){
-					waterInputText.setBackgroundColor(Color.WHITE);
-					Toast.makeText(SettingActivity.this, "hasFocus", Toast.LENGTH_SHORT).show();
-				}else{
-					waterInputText.setBackgroundColor(Color.rgb(245, 245, 245));
-					Toast.makeText(SettingActivity.this, "lose Focus", Toast.LENGTH_SHORT).show();
-				}
-				
-			}
-		});
+//		//天数输入框！！！我觉得是虚拟机的问题！！！肯定是的！！！！
+//		final EditText waterInputText = (EditText)findViewById(R.id.water_input_editText);
+//		waterInputText.setOnFocusChangeListener(new OnFocusChangeListener() {			
+//			@SuppressLint("ResourceAsColor")
+//			@Override
+//			public void onFocusChange(View view, boolean hasFocus) {
+//				if(hasFocus){
+//					waterInputText.setBackgroundColor(Color.WHITE);
+//					Toast.makeText(SettingActivity.this, "hasFocus", Toast.LENGTH_SHORT).show();
+//				}else{
+//					waterInputText.setBackgroundColor(Color.rgb(245, 245, 245));
+//					Toast.makeText(SettingActivity.this, "lose Focus", Toast.LENGTH_SHORT).show();
+//				}
+//				
+//			}
+//		});
 		
 		
 		final TextView timePicker1 = (TextView)findViewById(R.id.time_picker1);
