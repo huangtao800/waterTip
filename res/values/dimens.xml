@@ -10,4 +10,5 @@
     <dimen name="number_left_size">20dp</dimen>
     <dimen name="title_size">40dp</dimen>
     <dimen name="water_annotation">12dp</dimen>
+    <dimen name="img_button_size">60dp</dimen>
 </resources>
