@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.graphics.Color;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.text.AndroidCharacter;
 import android.view.View;
@@ -14,6 +15,9 @@ import android.view.View.OnFocusChangeListener;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -27,7 +31,7 @@ public class SettingActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings_layout);	
-		
+		setAll(false);
 		
 		//天数输入框！！！
 		final EditText waterInputText = (EditText)findViewById(R.id.water_input_editText);
@@ -83,10 +87,44 @@ public class SettingActivity extends BaseActivity {
 				if(isChecked){		//设置被开启
 					TextView on_off_text = (TextView)findViewById(R.id.on_off_text);
 					on_off_text.setText("On");
+					setAll(true);
 				}else{	    		//设置被关闭
 					TextView on_off_text = (TextView)findViewById(R.id.on_off_text);
-					on_off_text.setText("Off");				}
+					on_off_text.setText("Off");	
+					setAll(false);
+				}
 			}
 		});
+	}
+	
+	
+	private void setAll(Boolean isOpen){
+		if(isOpen){			//Switch开启，把那些东西都visible
+			TextView t1 = (TextView)findViewById(R.id.everyday_text);
+			t1.setVisibility(View.VISIBLE);
+			TextView t2 = (TextView)findViewById(R.id.time_picker1);
+			t2.setVisibility(View.VISIBLE);
+			TextView t3 = (TextView)findViewById(R.id.to_text);
+			t3.setVisibility(View.VISIBLE);
+			TextView t4 = (TextView)findViewById(R.id.time_picker2);
+			t4.setVisibility(View.VISIBLE);
+			TextView t5 = (TextView)findViewById(R.id.group_text);
+			t5.setVisibility(View.VISIBLE);
+			RadioGroup t6 = (RadioGroup)findViewById(R.id.time_choose_group);
+			t6.setVisibility(View.VISIBLE);			
+		}else{
+			TextView t1 = (TextView)findViewById(R.id.everyday_text);
+			t1.setVisibility(View.INVISIBLE);
+			TextView t2 = (TextView)findViewById(R.id.time_picker1);
+			t2.setVisibility(View.INVISIBLE);
+			TextView t3 = (TextView)findViewById(R.id.to_text);
+			t3.setVisibility(View.INVISIBLE);
+			TextView t4 = (TextView)findViewById(R.id.time_picker2);
+			t4.setVisibility(View.INVISIBLE);
+			TextView t5 = (TextView)findViewById(R.id.group_text);
+			t5.setVisibility(View.INVISIBLE);
+			RadioGroup t6 = (RadioGroup)findViewById(R.id.time_choose_group);
+			t6.setVisibility(View.INVISIBLE);
+		}
 	}
 }
