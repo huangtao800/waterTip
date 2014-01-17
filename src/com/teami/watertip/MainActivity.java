@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onAnimationEnd(Animation arg0) {
 				// TODO Auto-generated method stub
-				startActivity(new Intent(MainActivity.this,BodyActivity.class));
+				startActivity(new Intent(MainActivity.this,SettingActivity.class));
 				MainActivity.this.finish();
 			}
 		});
