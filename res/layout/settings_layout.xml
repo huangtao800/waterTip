@@ -102,7 +102,7 @@
             android:textSize="@dimen/app_title_size" />
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/water_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

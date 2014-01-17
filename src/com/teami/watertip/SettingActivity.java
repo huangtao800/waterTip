@@ -8,6 +8,7 @@ import android.text.AndroidCharacter;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.widget.EditText;
+import android.widget.Switch;
 
 public class SettingActivity extends Activity {
 
@@ -17,6 +18,8 @@ public class SettingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings_layout);	
 		
+		
+		//天数输入框！！！
 		final EditText waterInputText = (EditText)findViewById(R.id.water_input_editText);
 		waterInputText.setOnFocusChangeListener(new OnFocusChangeListener() {			
 			@SuppressLint("ResourceAsColor")
@@ -30,6 +33,10 @@ public class SettingActivity extends Activity {
 				
 			}
 		});
+		
+		
+		//Switch的监听
+		final Switch settingSwitch = (Switch)findViewById(R.id.water_switch);
 	
 	}
 }
