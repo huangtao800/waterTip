@@ -104,7 +104,7 @@
             android:layout_marginRight="44dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:text="Off"
             android:textColor="@android:color/background_dark" />
         
@@ -128,7 +128,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:text="每天"
             android:textColor="@android:color/background_dark" />
 		
@@ -141,7 +141,7 @@
 		    android:layout_toRightOf="@id/everyday_text"
 		    android:text="7:00"
 		    android:textColor="@android:color/background_dark"
-		    android:textSize="23dp" />
+		    android:textSize="23sp" />
 
         <TextView
             android:id="@+id/to_text"
@@ -151,7 +151,7 @@
             android:layout_toRightOf="@id/time_picker1"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:text="至"
             android:textColor="@android:color/background_dark" />
 		
@@ -163,7 +163,7 @@
             android:layout_alignBaseline="@id/everyday_text"
             android:layout_toRightOf="@id/to_text"
             android:layout_marginTop="10dp"
-            android:textSize="23dp"
+            android:textSize="23sp"
             android:text="23:00"
             android:textColor="@android:color/background_dark" />
 		
@@ -175,7 +175,7 @@
             android:layout_below="@+id/everyday_text"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:text="每隔"
             android:textColor="@android:color/background_dark" />
            
