@@ -78,7 +78,7 @@ public class BodyActivity extends BaseActivity {
 		int drunkNumber=sharedPreferences.getInt(TODAY_CUPS, 0);
 		int goalNumber=sharedPreferences.getInt(GOAL_NUMBER, 8);
 		int leftNumber=goalNumber-drunkNumber;
-		if(leftNumber>=0){
+		if(leftNumber>0){
 			leftNumberView.setText(leftNumber+" to go!");
 		}else{
 			leftNumberView.setText("Mission Completed!");
