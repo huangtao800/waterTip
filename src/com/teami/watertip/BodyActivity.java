@@ -79,9 +79,9 @@ public class BodyActivity extends BaseActivity {
 		int goalNumber=sharedPreferences.getInt(GOAL_NUMBER, 8);
 		int leftNumber=goalNumber-drunkNumber;
 		if(leftNumber>0){
-			leftNumberView.setText(leftNumber+" to go!");
+			leftNumberView.setText("还差"+leftNumber+"杯");
 		}else{
-			leftNumberView.setText("Mission Completed!");
+			leftNumberView.setText("任务完成！");
 		}
 	}
 
