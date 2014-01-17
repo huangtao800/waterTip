@@ -151,7 +151,8 @@
                     android:layout_height="@dimen/img_button_size"
                     android:src="@drawable/history"
                     android:background="@android:color/white"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:onClick="onHistoryClick" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
