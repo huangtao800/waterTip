@@ -35,6 +35,20 @@ public class SettingActivity extends BaseActivity {
 		
 		//ÃÏ ˝ ‰»ÎøÚ£°£°£°
 		final EditText waterInputText = (EditText)findViewById(R.id.water_input_editText);
+		waterInputText.setOnFocusChangeListener(new OnFocusChangeListener() {			
+			@SuppressLint("ResourceAsColor")
+			@Override
+			public void onFocusChange(View view, boolean hasFocus) {
+				if(hasFocus){
+					waterInputText.setBackgroundColor(Color.WHITE);
+					Toast.makeText(SettingActivity.this, "hasFocus", Toast.LENGTH_SHORT).show();
+				}else{
+					waterInputText.setBackgroundColor(Color.rgb(245, 245, 245));
+					Toast.makeText(SettingActivity.this, "lose Focus", Toast.LENGTH_SHORT).show();
+				}
+				
+			}
+		});
 		
 		
 		final TextView timePicker1 = (TextView)findViewById(R.id.time_picker1);
@@ -62,7 +76,6 @@ public class SettingActivity extends BaseActivity {
 		timePicker2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				Calendar calendar = Calendar.getInstance();
 				new TimePickerDialog(SettingActivity.this, new TimePickerDialog.OnTimeSetListener() {
 					@Override
 					public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
