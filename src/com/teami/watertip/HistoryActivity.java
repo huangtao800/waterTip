@@ -22,7 +22,7 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher.ViewFactory;
 
-public class HistoryActivity extends Activity{
+public class HistoryActivity extends BaseActivity{
 	private String title = "喝水历史统计";
 	private double[] xContent;
 	private double[] yContent;

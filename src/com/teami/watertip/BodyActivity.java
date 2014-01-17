@@ -179,4 +179,8 @@ public class BodyActivity extends BaseActivity {
 		setDrunkNumber();
 		setLeftNumber();
 	}
+	
+	public void addHistory(View view){
+		startActivity(new Intent(BodyActivity.this,HistoryActivity.class));
+	}
 }

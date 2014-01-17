@@ -41,8 +41,8 @@
 
         <ImageView
             android:id="@+id/result_image"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:scaleType="fitCenter"
@@ -84,8 +84,7 @@
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/relative_layout02"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="20dp" >
     </TextSwitcher>
 
     <LinearLayout
@@ -94,15 +93,15 @@
         android:layout_below="@id/tip_textswitcher"
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="30dp" >
+        android:layout_marginBottom="20dp" >
 
         <ImageButton
             android:id="@+id/add_button"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:scaleType="fitCenter"
             android:src="@drawable/cup"
-            android:background="@color/background"
+            android:background="@android:color/white"
             android:onClick="onAddClick" />
 
         <LinearLayout
@@ -120,7 +119,7 @@
                     android:layout_width="@dimen/img_button_size"
                     android:layout_height="@dimen/img_button_size"
                     android:src="@drawable/set"
-                    android:background="@color/background"
+                    android:background="@android:color/white"
                     android:scaleType="fitCenter"
                     android:onClick="onSetClick" />
 
@@ -129,7 +128,7 @@
                     android:layout_width="@dimen/img_button_size"
                     android:layout_height="@dimen/img_button_size"
                     android:src="@drawable/help"
-                    android:background="@color/background"
+                    android:background="@android:color/white"
                     android:scaleType="fitCenter" />
             </LinearLayout>
 
@@ -143,7 +142,7 @@
                     android:layout_width="@dimen/img_button_size"
                     android:layout_height="@dimen/img_button_size"
                     android:src="@drawable/clear"
-                    android:background="@color/background"
+                    android:background="@android:color/white"
                     android:scaleType="fitCenter" />
 
                 <ImageButton
@@ -151,7 +150,7 @@
                     android:layout_width="@dimen/img_button_size"
                     android:layout_height="@dimen/img_button_size"
                     android:src="@drawable/history"
-                    android:background="@color/background"
+                    android:background="@android:color/white"
                     android:scaleType="fitCenter" />
             </LinearLayout>
         </LinearLayout>
