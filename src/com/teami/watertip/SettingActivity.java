@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class SettingActivity extends Activity {
+public class SettingActivity extends BaseActivity {
 
 	private boolean isOpen = false;
 	
