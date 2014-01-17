@@ -117,7 +117,8 @@
                     android:layout_height="@dimen/img_button_size"
                     android:src="@drawable/set"
                     android:background="@color/background"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:onClick="onSetClick" />
 
                 <ImageButton
                     android:id="@+id/help_button"

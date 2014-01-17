@@ -2,7 +2,7 @@ package com.teami.watertip;
 
 import java.util.Calendar;
 import android.app.Activity;
-import android.graphics.Color;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +29,11 @@ public class BodyActivity extends Activity {
 		setNumberLeft();
 		setFont();
 		setWaterTip();
+		
+	}
+	
+	public void onSetClick(View view){
+		startActivity(new Intent(BodyActivity.this,SettingActivity.class));
 	}
 
 	/**
