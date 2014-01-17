@@ -2,23 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:background="@android:color/white"
-    >
-   
-    <!-- Settings -->	   
+    android:orientation="vertical" >
+
+    <!-- Settings -->
+
     <TextView
-   	    android:layout_width="wrap_content"
-   	    android:layout_height="wrap_content"
-   	    android:text="@string/settings_title"
-   	    android:textColor="@color/font_color"
-   	    android:textSize="@dimen/title_size"
-   	    android:layout_gravity="center" 
-   	    android:layout_marginTop="10dp"
-   	    />
-   	    
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/settings_title"
+        android:textColor="@color/font_color"
+        android:textSize="@dimen/title_size" />
+
     <!-- 每日喝水多少杯 -->
-    
+
     <RelativeLayout
         android:id="@+id/set_water_count_section"
         android:layout_width="fill_parent"
@@ -31,9 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/font_color"
-            android:text="每日喝水"
-            android:gravity="center"
             android:ems="5"
+            android:gravity="center"
+            android:text="每日喝水"
             android:textColor="@android:color/white"
             android:textSize="@dimen/app_title_size" />
 
@@ -41,49 +40,44 @@
             android:id="@+id/water_input_editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_below="@id/water_setting_title"
-			android:layout_alignParentRight="true"
-			android:layout_marginRight="30dp"
-			android:background="@color/section_backgroud_color"
-           	android:ems="1"
-           	android:cursorVisible="false"
+            android:layout_marginRight="30dp"
+            android:background="@color/section_backgroud_color"
+            android:cursorVisible="false"
+            android:ems="1"
             android:inputType="number"
             android:text="@string/count_of_water"
             android:textColor="@color/font_color"
             android:textSize="@dimen/count_size" >
-
         </EditText>
-        
-        
+
         <TextView
             android:id="@+id/water_annotation_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/water_input_editText"
             android:layout_marginRight="15dp"
-			android:paddingBottom="15px"
             android:gravity="right"
+            android:paddingBottom="15px"
             android:text=" *一般的杯子大约都是200ml"
             android:textColor="@color/font_color"
             android:textSize="@dimen/water_annotation" />
 
-        
-        <TextView 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@id/water_annotation_text"
+            android:layout_alignRight="@id/water_input_editText"
+            android:layout_marginBottom="16dp"
             android:text="杯"
             android:textColor="@color/font_color"
-            android:textSize="@dimen/title_size"
-            android:layout_marginBottom="16dp"
-            android:layout_alignRight="@id/water_input_editText"
-            android:layout_above="@id/water_annotation_text"
-            />
-        
+            android:textSize="@dimen/title_size" />
     </RelativeLayout>
 
-        <!-- 每日喝水多少杯 -->
-    
-   <RelativeLayout
+    <!-- 每日喝水多少杯 -->
+
+    <RelativeLayout
         android:id="@+id/set_reminding_section"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -95,20 +89,136 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/font_color"
-            android:text="提醒设定"
             android:ems="5"
             android:gravity="center"
+            android:text="提醒设定"
             android:textColor="@android:color/white"
             android:textSize="@dimen/app_title_size" />
 
-        <Switch
-            android:id="@+id/water_switch"
+        <TextView
+            android:id="@+id/on_off_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="66dp"
-            android:layout_toRightOf="@+id/set_reminding_title"/>
+            android:layout_alignRight="@+id/set_reminding_title"
+            android:layout_below="@+id/set_reminding_title"
+            android:layout_marginRight="44dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="30dp"
+            android:text="Off"
+            android:textColor="@android:color/background_dark" />
+        
+        
+        <Switch
+            android:id="@+id/open_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/on_off_text"
+            android:layout_toRightOf="@id/on_off_text"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            />
+   		 
+        <TextView
+            android:id="@+id/everyday_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/on_off_text"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:text="每天"
+            android:textColor="@android:color/background_dark" />
+		
+		<TextView
+		    android:id="@+id/time_picker1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBaseline="@+id/everyday_text"
+		    android:layout_marginRight="30dp"
+		    android:layout_toRightOf="@id/everyday_text"
+		    android:text="7:00"
+		    android:textColor="@android:color/background_dark"
+		    android:textSize="23dp" />
 
-    </RelativeLayout>
-    
+        <TextView
+            android:id="@+id/to_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/on_off_text"
+            android:layout_toRightOf="@id/time_picker1"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:text="至"
+            android:textColor="@android:color/background_dark" />
+		
+		<TextView
+            android:id="@+id/time_picker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/on_off_text"
+            android:layout_alignBaseline="@id/everyday_text"
+            android:layout_toRightOf="@id/to_text"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:text="23:00"
+            android:textColor="@android:color/background_dark" />
+		
+		
+        <TextView
+            android:id="@+id/group_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/everyday_text"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="15dp"
+            android:text="每隔"
+            android:textColor="@android:color/background_dark" />
+           
+        <RadioGroup
+	        android:id="@+id/time_choose_group"
+	        android:layout_below="@id/group_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:orientation="horizontal"
+	        android:layout_marginLeft="70dp"
+	        android:paddingBottom="10dp"
+	        >
+	
+	        <RadioButton
+	            android:id="@+id/radio0"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:checked="true"
+         	    android:textColor="@android:color/background_dark"
+	            android:textSize="@dimen/date_size"
+	            android:text="半小时" />
+	
+	        <RadioButton
+	            android:id="@+id/radio1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="@android:color/background_dark"
+	            android:textSize="@dimen/date_size"			
+	            android:text="一小时" />
+	
+	        <RadioButton
+	            android:id="@+id/radio2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="@android:color/background_dark"
+	            android:textSize="@dimen/date_size"              
+	            android:text="两小时" />
+	    </RadioGroup>
+
+
+   		
+	</RelativeLayout>       
+        
+
+
 </LinearLayout>
