@@ -42,14 +42,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@id/water_setting_title"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="70dp"
             android:background="@color/section_backgroud_color"
             android:cursorVisible="false"
-            android:ems="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:inputType="number"
+            android:maxLength="2"
+            android:gravity="right"
             android:text="@string/count_of_water"
             android:textColor="@color/font_color"
             android:textSize="@dimen/count_size" >
+
+            <requestFocus />
         </EditText>
 
         <TextView
@@ -67,12 +72,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/water_annotation_text"
-            android:layout_alignRight="@id/water_input_editText"
-            android:layout_marginBottom="16dp"
+            android:layout_alignBottom="@+id/water_input_editText"
+            android:layout_alignEnd="@id/water_input_editText"
+            android:layout_alignRight="@+id/water_annotation_text"
+            android:paddingBottom="12dp"
+            android:layout_marginRight="15dp"
             android:text="杯"
             android:textColor="@color/font_color"
             android:textSize="@dimen/title_size" />
+
     </RelativeLayout>
 
     <!-- 每日喝水多少杯 -->
@@ -108,7 +116,6 @@
             android:text="Off"
             android:textColor="@android:color/background_dark" />
         
-        
         <Switch
             android:id="@+id/open_switch"
             android:layout_width="wrap_content"
@@ -118,7 +125,7 @@
             android:textColor="@android:color/white"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="10dp"
-            />
+            /> 
    		 
         <TextView
             android:id="@+id/everyday_text"
@@ -213,7 +220,7 @@
 	            android:textColor="@android:color/background_dark"
 	            android:textSize="@dimen/date_size"              
 	            android:text="两小时" />
-	    </RadioGroup>
+	    </RadioGroup> 
 
 
    		
