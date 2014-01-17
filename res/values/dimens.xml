@@ -10,5 +10,5 @@
     <dimen name="number_left_size">15sp</dimen>
     <dimen name="title_size">40sp</dimen>
     <dimen name="water_annotation">12sp</dimen>
-    <dimen name="img_button_size">60dp</dimen>
+    <dimen name="img_button_size">60sp</dimen>
 </resources>

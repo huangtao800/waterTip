@@ -41,8 +41,8 @@
 
         <ImageView
             android:id="@+id/result_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:scaleType="fitCenter"
@@ -98,8 +98,8 @@
 
         <ImageButton
             android:id="@+id/add_button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
             android:scaleType="fitCenter"
             android:src="@drawable/cup"
             android:background="@color/background"
