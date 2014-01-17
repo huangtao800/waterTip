@@ -1,15 +1,23 @@
 package com.teami.watertip;
 
 import java.util.Calendar;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.ViewSwitcher.ViewFactory;
 
 public class BodyActivity extends Activity {
 
 	private Typeface typeface = null;
+	private Handler handler;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +28,12 @@ public class BodyActivity extends Activity {
 		setDate();
 		setNumberLeft();
 		setFont();
+		setWaterTip();
+		
+	}
+	
+	public void onSetClick(View view){
+		startActivity(new Intent(BodyActivity.this,SettingActivity.class));
 	}
 
 	/**
@@ -58,7 +72,49 @@ public class BodyActivity extends Activity {
 		TextView dateView = (TextView) findViewById(R.id.date_textview);
 		dateView.setTypeface(typeface);
 
-		TextView tipView = (TextView) findViewById(R.id.tip_textview);
-		tipView.setTypeface(typeface);
 	}
+
+	/**
+	 * 设置喝水小提示，每隔一段时间更换提示内容
+	 */
+	private void setWaterTip() {
+		TextSwitcher tipSwitcher = (TextSwitcher) findViewById(R.id.tip_textswitcher);
+		tipSwitcher.setFactory(new ViewFactory() {
+
+			@Override
+			public View makeView() {
+				// TODO Auto-generated method stub
+				TextView textView = new TextView(BodyActivity.this);
+				textView.setGravity(Gravity.CENTER_HORIZONTAL
+						| Gravity.CENTER_VERTICAL);
+				textView.setTextColor(getResources().getColor(R.color.font_color));
+				textView.setTextSize(getResources().getDimension(R.dimen.tip_size));
+				return textView;
+			}
+		});
+		
+		Animation in = AnimationUtils.loadAnimation(this,  
+                android.R.anim.fade_in);  
+        Animation out = AnimationUtils.loadAnimation(this,  
+                android.R.anim.fade_out); 
+        tipSwitcher.setInAnimation(in);
+        tipSwitcher.setOutAnimation(out);
+        
+		handler = new Handler();
+		Runnable runnable = new Runnable() {
+			int number = 0;
+			TextSwitcher tipSwitcher = (TextSwitcher) findViewById(R.id.tip_textswitcher);
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				number++;
+				tipSwitcher.setText(number + "");
+				handler.postDelayed(this, 1000);
+			}
+
+		};
+		handler.postDelayed(runnable, 1000);
+	}
+
 }

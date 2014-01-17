@@ -2,5 +2,6 @@
 <resources>
     <color name="font_color">#21bfde</color>
     <color name="section_backgroud_color">#F5F5F5</color>
+    <color name="background">#FFFFFF</color>
     
 </resources>

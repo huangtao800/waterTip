@@ -25,7 +25,7 @@
         </activity>
         <activity android:name="BodyActivity"></activity>
         <activity android:name="SettingActivity"></activity>
-        
-    </application>
+                 
+     </application>
 
 </manifest>
