@@ -7,7 +7,7 @@
     <dimen name="date_size">13sp</dimen>
     <dimen name="count_size">76sp</dimen>
     <dimen name="tip_size">7sp</dimen>
-    <dimen name="number_left_size">10sp</dimen>
+    <dimen name="number_left_size">15sp</dimen>
     <dimen name="title_size">40sp</dimen>
     <dimen name="water_annotation">12sp</dimen>
     <dimen name="img_button_size">60dp</dimen>
