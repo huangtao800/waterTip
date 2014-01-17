@@ -8,7 +8,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import com.teami.model.TipModel;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -180,7 +179,7 @@ public class BodyActivity extends BaseActivity {
 		setLeftNumber();
 	}
 	
-	public void addHistory(View view){
+	public void onHistoryClick(View view){
 		startActivity(new Intent(BodyActivity.this,HistoryActivity.class));
 	}
 }
