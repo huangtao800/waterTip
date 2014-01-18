@@ -70,6 +70,7 @@
                 android:id="@+id/left_number_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/count_left_margin"
                 android:layout_gravity="center_horizontal"
                 android:singleLine="true"
                 android:text="tempText"
@@ -130,8 +131,7 @@
                     android:layout_height="@dimen/smallImgButton_size"
                     android:src="@drawable/help"
                     android:background="@android:color/white"
-                    android:scaleType="fitCenter"
-                    android:onClick="onRecommendClick" />
+                    android:scaleType="fitCenter" />
             </LinearLayout>
 
             <LinearLayout

@@ -19,7 +19,7 @@
     <dimen name="tip_padding_left">10dp</dimen>
     <dimen name="tip_padding_right">10dp</dimen>
     <dimen name="textSwitcher_margin_top">20dp</dimen>
-    <dimen name="buttonGroup_margin_bottom">70dp</dimen>
+    <dimen name="buttonGroup_margin_bottom">50dp</dimen>
     <dimen name="addButton_width">150dp</dimen>
     <dimen name="addButton_height">150dp</dimen>
     <dimen name="smallButtonGroup_margin_left">20dp</dimen>

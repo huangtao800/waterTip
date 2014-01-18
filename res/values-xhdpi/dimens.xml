@@ -24,5 +24,4 @@
     <dimen name="addButton_height">150dp</dimen>
     <dimen name="smallButtonGroup_margin_left">20dp</dimen>
     <dimen name="secondLineImgButton_margin_top">20dp</dimen>
-    <dimen name="count_left_margin">50dp</dimen>
 </resources>
