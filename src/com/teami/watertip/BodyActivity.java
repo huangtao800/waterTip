@@ -1,11 +1,8 @@
 package com.teami.watertip;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-
 import org.xmlpull.v1.XmlPullParserException;
 
 import com.teami.model.ClearAlarmReceiver;
@@ -21,7 +18,6 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
