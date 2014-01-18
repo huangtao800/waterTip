@@ -19,4 +19,5 @@ public class BaseActivity extends Activity{
 
 	//setting部分用到的数据结束！！！！
 
+	public static final String APP_TAG="water tip";
 }

@@ -1,8 +1,10 @@
 package com.teami.watertip;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -19,6 +21,7 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -47,9 +50,16 @@ public class BodyActivity extends BaseActivity {
 		setLeftNumber();
 		setFont();
 		setWaterTip();
-		
+		setAlarmWork();
 	}
 
+	protected void onResume(){
+		super.onResume();
+		setDate();
+		setDrunkNumber();
+		setLeftNumber();
+	}
+	
 	/**
 	 * …Ë÷√»’∆⁄
 	 */
@@ -168,16 +178,26 @@ public class BodyActivity extends BaseActivity {
 	}
 	
 	private void setAlarmWork(){
+//		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
 		Intent intent=new Intent(this,ClearAlarmReceiver.class);
 		PendingIntent pi=PendingIntent.getBroadcast(this, 0, intent,0);
 		AlarmManager am=(AlarmManager)getSystemService(ALARM_SERVICE);
-		Calendar c=Calendar.getInstance();
-		c.add(Calendar.DATE, 1);
-		c.set(Calendar.HOUR, 0);
-		c.set(Calendar.MINUTE, 0);
-		c.set(Calendar.SECOND,1);
+		Calendar calendar=Calendar.getInstance();
+		calendar.setTimeInMillis(System.currentTimeMillis());
+//		Log.i(BaseActivity.APP_TAG, "calendar time: "+format.format(calendar.getTime()));
 		
-		am.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), 86400000, pi);
+		calendar.add(Calendar.DATE, 1);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND,0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		
+		am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 86400000, pi);
+		
+//		Date date=calendar.getTime();
+//		
+//		Log.i(BaseActivity.APP_TAG, "new calendar time: "+format.format(date));
 	}
 
 	public void onSetClick(View view){
