@@ -6,8 +6,11 @@ import java.util.Calendar;
 
 import org.xmlpull.v1.XmlPullParserException;
 
+import com.teami.model.ClearAlarmReceiver;
 import com.teami.model.TipModel;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -160,9 +163,21 @@ public class BodyActivity extends BaseActivity {
 				index++;
 				handler.postDelayed(this, 6000);
 			}
-
 		};
 		handler.postDelayed(runnable, 6000);
+	}
+	
+	private void setAlarmWork(){
+		Intent intent=new Intent(this,ClearAlarmReceiver.class);
+		PendingIntent pi=PendingIntent.getBroadcast(this, 0, intent,0);
+		AlarmManager am=(AlarmManager)getSystemService(ALARM_SERVICE);
+		Calendar c=Calendar.getInstance();
+		c.add(Calendar.DATE, 1);
+		c.set(Calendar.HOUR, 0);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND,1);
+		
+		am.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), 86400000, pi);
 	}
 
 	public void onSetClick(View view){
