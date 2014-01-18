@@ -197,4 +197,8 @@ public class BodyActivity extends BaseActivity {
 	public void onHistoryClick(View view){
 		startActivity(new Intent(BodyActivity.this,HistoryActivity.class));
 	}
+	
+	public void onRecommendClick(View view){
+		startActivity(new Intent(BodyActivity.this,RecommendActivity.class));
+	}
 }

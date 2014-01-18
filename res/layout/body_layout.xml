@@ -130,7 +130,8 @@
                     android:layout_height="@dimen/smallImgButton_size"
                     android:src="@drawable/help"
                     android:background="@android:color/white"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:onClick="onRecommendClick" />
             </LinearLayout>
 
             <LinearLayout
