@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text_RelativeLayout1"
+   
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+    
+
+        <TextView
+            android:id="@+id/text_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" 
+            android:layout_margin="20dp"
+           
+            android:text="aaaaaa"
+                                              
+        />
+        
+
+    
+     <ImageButton
+        android:id="@+id/recommend_lastButton"
+        android:layout_width="@dimen/smallImgButton_size"
+        android:layout_height="wrap_content"
+        android:src="@drawable/last"
+        android:background="@android:color/white"
+        android:scaleType="fitCenter"
+        android:layout_toLeftOf="@+id/text_detail"
+        android:onClick="onLastRecommendClick" />
+     
+          <ImageButton
+        android:id="@+id/recommend_nextButton"
+        android:layout_width="@dimen/smallImgButton_size"
+        android:layout_height="wrap_content"
+        android:src="@drawable/next"
+        android:background="@android:color/white"
+        android:scaleType="fitCenter"
+        android:layout_toRightOf="@+id/text_detail"
+        android:onClick="onLastRecommendClick" />
+    
+    
+    
+    
+    
+</RelativeLayout>
