@@ -16,7 +16,7 @@
         android:layout_gravity="center_horizontal"   
         android:layout_margin="20dp"     
         
-        android:text="Title"         
+        android:text="百合花"         
      />
     
     <ImageView
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"       
         android:scaleType="fitCenter"
-        
-        android:src="@drawable/person"    
+        android:src="@drawable/baihehua"
+          
     />
     
     <TextView
@@ -36,7 +36,10 @@
         android:layout_gravity="center_horizontal" 
         android:layout_margin="20dp"
         
-        android:text="  Details  Details  Details  Details  Details  Details  Details  Details  Details "   
+        android:text="功效: 对阴虚久咳,润肺化痰,痰中带血,虚烦惊悸,失眠多梦,精神恍惚，安心、定胆、益智、润肺止咳；有润肺止咳，补中益志，清心安神定胆作用，养阴润肺止咳，用于肺阴虚所致的燥热咳嗽及劳咳，久咳，痰中带血等。清心安神，用于热病余热未清，气阴不足而致的神思忧惚，烦燥失眠，心悸 
+适宜搭配: 金银花 
+冲泡方法: 每次取百合花2克-3克.用开水冲泡焖10分钟左右即可. 
+ "   
                                               
     />
     
