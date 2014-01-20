@@ -1,5 +1,8 @@
 package com.teami.model;
 
+import java.io.FileNotFoundException;
+import java.io.OutputStream;
+
 import com.teami.watertip.BaseActivity;
 import com.teami.watertip.BodyActivity;
 import com.teami.watertip.R;
@@ -34,7 +37,12 @@ public class ClearAlarmReceiver extends BroadcastReceiver{
 	}
 	
 	private void saveTodayCups(Context context){
-		XmlResourceParser recordParser= context.getResources().getXml(R.xml.record);
+		try {
+			context.openFileOutput("record.xml", Context.MODE_PRIVATE);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

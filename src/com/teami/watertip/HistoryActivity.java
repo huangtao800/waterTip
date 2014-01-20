@@ -102,8 +102,8 @@ public class HistoryActivity extends BaseActivity{
 			e1.printStackTrace();
 		}
 		
-		DatabaseHelper dbHelper=new DatabaseHelper(HistoryActivity.this, "waterTip",2);
-		SQLiteDatabase sqliteDatabase = dbHelper.getReadableDatabase();
+		DatabaseHelper dbHelper=new DatabaseHelper(HistoryActivity.this, "water.db",2);
+		SQLiteDatabase sqliteDatabase = dbHelper.getWritableDatabase();
 		list=historyModel.getRecordList(sqliteDatabase);
 		
 		title =  getResources().getString(R.string.historyTitle);

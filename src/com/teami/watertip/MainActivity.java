@@ -1,5 +1,7 @@
 package com.teami.watertip;
 
+import com.teami.model.DatabaseHelper;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +18,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		startAnimating();
-	
+		DatabaseHelper helper=new DatabaseHelper(MainActivity.this, "water.db",2);
+		helper.getReadableDatabase();
+		helper.close();
 	}
 	
 	@Override

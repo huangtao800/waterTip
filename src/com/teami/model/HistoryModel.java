@@ -77,8 +77,13 @@ public class HistoryModel {
 		}
 	}
 
+	/**
+	 * 从数据库中读取历史数据
+	 * @param db
+	 * @return
+	 */
 	public ArrayList<String[]> getRecordList(SQLiteDatabase db) {
-		Cursor cursor=db.query("cups", new String[]{"year","month","day"},null , null, null, null, "year,month,day desc");
+		Cursor cursor=db.query("cups", new String[]{"date","num"},null , null, null, null, "date desc");
 		ArrayList<String[]> resultList=new ArrayList<String[]>();
 		while(cursor.moveToNext()){
 			String date=cursor.getString(cursor.getColumnIndex("date"));
