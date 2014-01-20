@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		startAnimating();
-		DatabaseHelper helper=new DatabaseHelper(MainActivity.this, "water.db",2);
+		DatabaseHelper helper=new DatabaseHelper(MainActivity.this, "water.db");
 		helper.getReadableDatabase();
 		helper.close();
 	}

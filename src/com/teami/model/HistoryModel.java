@@ -1,6 +1,5 @@
 package com.teami.model;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.achartengine.chart.PointStyle;
@@ -8,11 +7,6 @@ import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import android.content.Context;
-import android.content.res.XmlResourceParser;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -87,7 +81,7 @@ public class HistoryModel {
 		ArrayList<String[]> resultList=new ArrayList<String[]>();
 		while(cursor.moveToNext()){
 			String date=cursor.getString(cursor.getColumnIndex("date"));
-			int num=cursor.getInt(cursor.getColumnIndex("day"));
+			int num=cursor.getInt(cursor.getColumnIndex("num"));
 			resultList.add(new String[]{date,num+""});
 		}
 		return resultList;

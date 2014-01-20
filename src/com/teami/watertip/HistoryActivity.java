@@ -1,12 +1,10 @@
 package com.teami.watertip;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.achartengine.ChartFactory;
 import org.achartengine.chart.PointStyle;
-import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 import org.xmlpull.v1.XmlPullParser;
@@ -16,8 +14,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import com.teami.model.DatabaseHelper;
 import com.teami.model.HistoryModel;
 
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Paint.Align;
@@ -102,7 +98,7 @@ public class HistoryActivity extends BaseActivity{
 			e1.printStackTrace();
 		}
 		
-		DatabaseHelper dbHelper=new DatabaseHelper(HistoryActivity.this, "water.db",2);
+		DatabaseHelper dbHelper=new DatabaseHelper(HistoryActivity.this, "water.db");
 		SQLiteDatabase sqliteDatabase = dbHelper.getWritableDatabase();
 		list=historyModel.getRecordList(sqliteDatabase);
 		

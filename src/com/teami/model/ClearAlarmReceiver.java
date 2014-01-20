@@ -1,18 +1,16 @@
 package com.teami.model;
 
-import java.io.FileNotFoundException;
-import java.io.OutputStream;
+import java.util.Calendar;
 
 import com.teami.watertip.BaseActivity;
 import com.teami.watertip.BodyActivity;
-import com.teami.watertip.R;
-
 import android.content.BroadcastReceiver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.res.XmlResourceParser;
+import android.database.sqlite.SQLiteDatabase;
 
 public class ClearAlarmReceiver extends BroadcastReceiver{
 
@@ -22,6 +20,10 @@ public class ClearAlarmReceiver extends BroadcastReceiver{
 		Intent it=new Intent(context,BodyActivity.class);
 		it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		clearDrunkNumber(context);
+
+		DatabaseHelper helper=new DatabaseHelper(context, "water.db");
+		SQLiteDatabase db=helper.getWritableDatabase();
+		saveTodayCups(db, context);
 //		Log.i(BaseActivity.APP_TAG,"alarm");
 	}
 	
@@ -36,14 +38,24 @@ public class ClearAlarmReceiver extends BroadcastReceiver{
 		editor.commit();
 	}
 	
-	private void saveTodayCups(Context context){
-		try {
-			context.openFileOutput("record.xml", Context.MODE_PRIVATE);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	/**
+	 * 将当天喝过的水保存至历史记录
+	 * @param db
+	 * @param context
+	 */
+	private void saveTodayCups(SQLiteDatabase db,Context context){
+		SharedPreferences sharedPreferences=context.getSharedPreferences(BaseActivity.PREFERENCE, Context.MODE_PRIVATE);
+		int drunkNumber=sharedPreferences.getInt(BaseActivity.TODAY_CUPS, 0);
 		
+		ContentValues values = new ContentValues();
+		Calendar calendar=Calendar.getInstance();
+		calendar.setTimeInMillis(System.currentTimeMillis());
+		int month=calendar.get(Calendar.MONTH);
+		month++;
+		int day=calendar.get(Calendar.DAY_OF_MONTH);
+		values.put("date", month+"."+day);
+		values.put("num", drunkNumber);
+		db.insert("cups", null, values);
 	}
 
 }
