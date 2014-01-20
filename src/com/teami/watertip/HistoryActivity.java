@@ -13,10 +13,12 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import com.teami.model.DatabaseHelper;
 import com.teami.model.HistoryModel;
 
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Paint.Align;
 import android.os.Bundle;
@@ -100,13 +102,9 @@ public class HistoryActivity extends BaseActivity{
 			e1.printStackTrace();
 		}
 		
-		try {
-			list=historyModel.parseRecordList(recordParser);
-		} catch (XmlPullParserException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		DatabaseHelper dbHelper=new DatabaseHelper(HistoryActivity.this, "waterTip",2);
+		SQLiteDatabase sqliteDatabase = dbHelper.getReadableDatabase();
+		list=historyModel.getRecordList(sqliteDatabase);
 		
 		title =  getResources().getString(R.string.historyTitle);
         lineInfoString = getResources().getString(R.string.historyaLineInfo);
