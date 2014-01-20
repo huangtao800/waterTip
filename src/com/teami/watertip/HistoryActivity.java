@@ -84,20 +84,6 @@ public class HistoryActivity extends BaseActivity{
  
     
     private void init() throws IndexOutOfBoundsException{
-    	
-		
-		InputStream inputStream=getResources().openRawResource(R.raw.record);
-		XmlPullParserFactory factory=null;
-		XmlPullParser recordParser=null;
-		try {
-			factory=XmlPullParserFactory.newInstance();
-			recordParser=factory.newPullParser();
-			recordParser.setInput(inputStream, "utf-8");
-		} catch (XmlPullParserException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
 		DatabaseHelper dbHelper=new DatabaseHelper(HistoryActivity.this, "water.db");
 		SQLiteDatabase sqliteDatabase = dbHelper.getWritableDatabase();
 		list=historyModel.getRecordList(sqliteDatabase);
