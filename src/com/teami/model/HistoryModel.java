@@ -8,6 +8,7 @@ import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
+import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import android.content.res.XmlResourceParser;
 
@@ -71,12 +72,12 @@ public class HistoryModel {
 		}
 	}
 	    
-	public ArrayList<String[]> parseRecordList(XmlResourceParser parser) throws XmlPullParserException, IOException{
+	public ArrayList<String[]> parseRecordList(XmlPullParser parser) throws XmlPullParserException, IOException{
 			ArrayList<String[]> resultList=new ArrayList<String[]>();
 			
 			int eventType=-1;
-			while(eventType!=XmlResourceParser.END_DOCUMENT){
-				if(eventType==XmlResourceParser.START_TAG){
+			while(eventType!=XmlPullParser.END_DOCUMENT){
+				if(eventType==XmlPullParser.START_TAG){
 					String strName=parser.getName();
 					if(strName.equals("record")){
 						String day = parser.getAttributeValue(null,"day");

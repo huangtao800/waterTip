@@ -1,6 +1,7 @@
 package com.teami.watertip;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.achartengine.ChartFactory;
@@ -8,8 +9,13 @@ import org.achartengine.chart.PointStyle;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
+import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import com.teami.model.HistoryModel;
+
+import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.Paint.Align;
@@ -81,7 +87,19 @@ public class HistoryActivity extends BaseActivity{
     
     private void init() throws IndexOutOfBoundsException{
     	
-		XmlResourceParser recordParser=getResources().getXml(R.xml.record);
+		
+		InputStream inputStream=getResources().openRawResource(R.raw.record);
+		XmlPullParserFactory factory=null;
+		XmlPullParser recordParser=null;
+		try {
+			factory=XmlPullParserFactory.newInstance();
+			recordParser=factory.newPullParser();
+			recordParser.setInput(inputStream, "utf-8");
+		} catch (XmlPullParserException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		try {
 			list=historyModel.parseRecordList(recordParser);
 		} catch (XmlPullParserException e) {
